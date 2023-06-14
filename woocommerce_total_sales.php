@@ -7,10 +7,10 @@
  * Author: Wan Zulkarnain
  */
 
-add_shortcode('woocommerce_wtd_sales', 'woocommerce_wan_wtd_sales');
+// add_shortcode('woocommerce_wtd_sales', 'woocommerce_wan_wtd_sales');
 add_shortcode('woocommerce_mtd_sales', 'woocommerce_wan_mtd_sales');
 add_shortcode('woocommerce_ytd_sales', 'woocommerce_wan_ytd_sales');
-add_shortcode('woocommerce_atd_sales', 'woocommerce_wan_atd_sales');
+// add_shortcode('woocommerce_atd_sales', 'woocommerce_wan_atd_sales');
 
 function woocommerce_wan_wtd_sales() {
 
@@ -26,9 +26,10 @@ function woocommerce_wan_wtd_sales() {
 
   $wtd_orders = wc_get_orders( 
     [
+      'status' => array('wc-completed'),
       'date_completed' => $week_start . '...' . $week_end,
       'customer_id' => $user_id,
-      'limit' => 200,
+      'limit' => -1,
     ]
   );
 
@@ -51,9 +52,10 @@ function woocommerce_wan_mtd_sales() {
 
   $mtd_orders = wc_get_orders(
     [
+      'status' => array('wc-completed'),
       'date_completed' => date('Y-m-01') . '...' . date('Y-m-t'),
       'customer_id' => $user_id,
-      'limit' => 200,
+      'limit' => -1,
     ] 
   );
 
@@ -76,9 +78,10 @@ function woocommerce_wan_ytd_sales() {
 
   $ytd_orders = wc_get_orders(
     [
+      'status' => array('wc-completed'),
       'date_completed' => date('Y-01-01') . '...' . date('Y-m-t'),
       'customer_id' => $user_id,
-      'limit' => 200,
+      'limit' => -1,
     ] 
   );
 
@@ -103,7 +106,7 @@ function woocommerce_wan_atd_sales() {
     [
       'status' => array('wc-completed'),
       'customer_id' => $user_id,
-      'limit' => 400,
+      'limit' => -1,
     ] 
   );
 
