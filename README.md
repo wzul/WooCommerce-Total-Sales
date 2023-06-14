@@ -13,7 +13,8 @@ Place shortcode inside your page and it will display the total sales. Available 
     - woocommerce_wtd_sales: for Week To Date sales amount
     - woocommerce_mtd_sales: for Month To Date sales amount
     - woocommerce_ytd_sales: for Year To Date sales amount
+    - woocommerce_atd_sales: for All Time To Date sales amount
 
 ## Limits
 
-To avoid significant performance issues, the plugin has configured to count only up to 200 orders. However, it can be changed depending on your needs.
+To avoid significant performance issues, the plugin has configured to count only up to 200 orders (except 400 order for atd). However, it can be changed depending on your needs.

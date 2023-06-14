@@ -10,6 +10,7 @@
 add_shortcode('woocommerce_wtd_sales', 'woocommerce_wan_wtd_sales');
 add_shortcode('woocommerce_mtd_sales', 'woocommerce_wan_mtd_sales');
 add_shortcode('woocommerce_ytd_sales', 'woocommerce_wan_ytd_sales');
+add_shortcode('woocommerce_atd_sales', 'woocommerce_wan_atd_sales');
 
 function woocommerce_wan_wtd_sales() {
 
@@ -88,4 +89,29 @@ function woocommerce_wan_ytd_sales() {
   }
 
   return wc_price( $ytd_total / 100);
+}
+
+function woocommerce_wan_atd_sales() {
+
+  if ( !is_user_logged_in() ) {
+    return wc_price( 0 );
+  }
+
+  $user_id = get_current_user_id();
+
+  $atd_orders = wc_get_orders(
+    [
+      'status' => array('wc-completed'),
+      'customer_id' => $user_id,
+      'limit' => 400,
+    ] 
+  );
+
+  $atd_total = 0;
+
+  foreach( $atd_orders as $order ) {
+    $atd_total+= round( $order->get_total() * 100);
+  }
+
+  return wc_price( $atd_total / 100);
 }
