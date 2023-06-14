@@ -18,3 +18,7 @@ Place shortcode inside your page and it will display the total sales. Available 
 ## Limits
 
 To avoid significant performance issues, the plugin has configured to count only up to 200 orders (except 400 order for atd). However, it can be changed depending on your needs.
+
+## Useful resources
+
+https://github.com/woocommerce/woocommerce/wiki/wc_get_orders-and-WC_Order_Query
