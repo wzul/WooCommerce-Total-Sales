@@ -10,9 +10,9 @@ Upload this repository to your WordPress Dashboard --> Plugins --> Add New --> U
 
 Place shortcode inside your page and it will display the total sales. Available shortcode is:
 
-    - `woocommerce_wtd_sales` for Week To Date sales amount
-    - `woocommerce_mtd_sales` for Month To Date sales amount
-    - `woocommerce_ytd_sales` for Year To Date sales amount
+    - woocommerce_wtd_sales: for Week To Date sales amount
+    - woocommerce_mtd_sales: for Month To Date sales amount
+    - woocommerce_ytd_sales: for Year To Date sales amount
 
 ## Limits
 
